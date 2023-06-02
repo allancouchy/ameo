@@ -1,0 +1,32 @@
+body {
+  background-color: $color-white;
+  margin: 0px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  color: $color-black;
+  flex-direction: column;
+  transition: all 1000ms;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  object-fit: cover;
+}

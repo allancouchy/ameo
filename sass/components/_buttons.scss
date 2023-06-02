@@ -1,0 +1,94 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 400ms ease-in-out;
+
+  &--contact {
+    width: 250px;
+    height: 60px;
+    color: $color-black;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: 2px solid $color-primary;
+    position: relative;
+    transition: all 1000ms linear;
+    animation: wiggle 2000ms linear;
+
+    &:hover {
+      color: $color-white;
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &::before {
+      content: "";
+      z-index: -1;
+      width: 250px;
+      height: 60px;
+      background-color: $color-primary;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: all 1000ms;
+      position: absolute;
+      top: 0px;
+    }
+  }
+
+  &--plus {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: $color-white;
+    background-color: $color-tertiary;
+    border-radius: 50%;
+
+    &:hover {
+      @include background($color-tertiary);
+    }
+  }
+
+  &--close {
+    width: 30px;
+    height: 30px;
+    background-color: $color-white;
+    border-style: none;
+    border-radius: 50%;
+
+    &:hover {
+      @include background($color-white);
+    }
+  }
+
+  &--more {
+    text-decoration: underline;
+    background-color: $color-white;
+    border-style: none;
+    align-self: flex-end;
+
+    &:hover {
+        color: $color-primary;
+    }
+  }
+
+  &--scroll {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: $color-white;
+    text-decoration: none;
+    background-color: hsl(0, 0%, 0%, 0.4);
+    border-radius: 5px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    transition: all 1000ms;
+
+    &:hover {
+      background-color: hsl(0, 0%, 0%, 0.6);
+    }
+  }
+}

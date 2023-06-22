@@ -78,19 +78,26 @@ closeClientsPopUp();
  * scroll window is inactive during 10s it desappears
  */
 
-const scrollToTop = () => {
-  const scrollToTopElement = document.querySelector(".btn--scroll");
+
+const showScrollButton = () => {
+  const scrollButton = document.querySelector(".btn--scroll");
 
   window.addEventListener("scroll", () => {
-    if (scrollY > 25) {
-      scrollToTopElement.style.cssText = "opacity: 1";
-      setTimeout(() => {
-        scrollToTopElement.style.cssText = "opacity: 0";
-      }, 10000);
+    if (window.scrollY > 100) {
+      scrollButton.style.opacity = 1;
     } else {
-      scrollToTopElement.style.cssText = "opacity: 0";
+      scrollButton.style.opacity = 0;
     }
   });
 };
-scrollToTop();
+showScrollButton();
 
+const scrollButtonBehaviour = () => {
+  const scrollButton = document.querySelector(".btn--scroll");
+
+  scrollButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+scrollButtonBehaviour();
